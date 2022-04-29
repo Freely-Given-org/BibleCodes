@@ -1,0 +1,571 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+This file gives a table of Bible versions abbreviations including
+these four compulsory fields:
+    An English book name (as a comment only)
+    A three-character reference code (upper case, no spaces, begins with a letter)
+        This reference code should reflect book contents (not book names) and is used to link to other tables.
+        These reference codes are guaranteed to be stable after V1.00
+            i.e., they will not change or be reused for different books.
+    A reference number (1..899 for processing only - not necessarily consecutive or sequential)
+        Reference numbers are guaranteed to be stable after V1.00
+            i.e., they will not change or be reused for different books.
+        Can be used as a unique ID instead of the reference code if you prefer an integer.
+        1..66 are guaranteed to match the common Protestant Bible book orders.
+        900..999 are reserved for user defined books and are not defined here.
+    A sequence number or typical book order number (1..999 for comparing the order only - not necessarily consecutive)
+        Only to be used if there is no better information about which order that books are intended to be published in.
+        Only the relative value of this field is important (smaller or bigger) - the actual values are meaningless.
+and then these optional fields (optional because not all systems handle the less common or more disputed books)
+    The number of expected chapters in this book (alternatives are separated by commas).
+        This is not authorative, but can assist in identifying books where the encoding is otherwise ambiguous.
+    The SBL abbreviation (can include spaces)
+    The OSIS abbreviation (no spaces but may begin with a digit)
+    The Sword abbreviation
+    The 1-2 digit CCEL ID number
+    The three-character USFM abbreviation (no spaces but may begin with a digit)
+        Also used for Paratext Bible editor and Digital Bible Library (DBL) bundles
+    The two-digit USFM ID number
+        UBS/SIL Paratext uses both the number and the abbreviation above (and USFM format)
+    The three-digit USX ID number
+        UBS/SIL Paratext can export to USX files
+    The 1-2 digit Bibledit ID number
+    The three-character NET Bible abbreviation
+    The three-character DrupalBible abbreviation
+    The 2-4 character Bible abbreviation used for the Robinson-Pierpont Byzantine Greek text
+    Alternative abbreviations (upper case, separated by commas, optional)
+        These abbreviations might typically be used in VPL (verse per line) Bibles
+    Possible alternative book codes (separated by commas)
+        This is not precise but roughly shows which book this book might be confused with.
+        It is used for automatic mapping of book codes (also using the expected number of chapters)
+    The name of a typical section containing this book (in the set OT, OT+, NT, NT+, DC, PS, FRT, BAK)
+Most of the above fields should individually be unique, but there are some many-to-one mappings.
+    e.g., Paratext uses the same code for Ezra as for Ezra-Nehemiah. (We make available separate codes.)
+
+The information in this table should be language agnostic although English is used as a meta-language.
+It should also be independent of any theological judgements but mostly based on historical publications.
+The main aim is to supply an inventory of book codes which are recognised by the BibleOrgSsy Bible Organisational System.
+
+Deutero-canonical/Apocryphal and less common books are included, even pseudegrapha.
+"Combined" books are included.
+This table does not infer any information about the quality or theological usefulness of any particular book.
+This table does not infer any information about the presence or the order of the books within any particular publication.
+This table is not authoritative about the number of chapters (or verses) in any given book in any particular publication.
+There should be exactly one entry for each possible Bible book which is printed separately in some publications
+    and one entry for each possible combination of those Bible books.
+For example:
+    If Ezra and Nehemiah are sometimes published as individual books, and sometimes combined, there should be three entries in this database.
+    If Hebrew Esther and Greek Esther are sometimes published as individual books, and sometimes combined, there should be 3 entries in this database.
+        However, if Greek Esther was never published singly, but only in combination with Hebrew Esther, there would only be 2 entries (Hebrew Esther and Combined Esther).
+    This is because mappings between/across Bible books in different publications will be dependent on this file.
+        (If it's JUST that chapters and verses are divided up differently WITHIN a book, that's handled elsewhere.)
+    If a book is a translation of another book, that is not usually a good enough reason to include multiple entries here
+        (unless say, both the original and a translation were published in the same "Bible").
+
+This file can never adequately represent all possible historical Bible books codes (and their mappings),
+    especially since it attempts to avoid including historic codes which were not consistent or logical.
+
+The data is preceded by a header of the same format as an OSIS header.
+
+Note that the data is supplied as XML elements (not attributes).
+
+Although an internal DTD is included, a Relax NG (RNC) schema is also supplied for better validation.
+
+See the supplied BibleBooksCodes.ReadMe.txt for more details.
+-->
+
+<!DOCTYPE BibleBooksCodes [
+    <!ELEMENT BibleBooksCodes (header,BibleBookCodes+)>
+        <!ELEMENT header (revisionDesc*,work)>
+            <!ELEMENT revisionDesc (date,p+)>
+                <!ELEMENT date (#PCDATA)>
+                <!ELEMENT p (#PCDATA)>
+            <!ELEMENT work (version,date,title,contributor+,identifier+,rights)>
+                <!ELEMENT version (#PCDATA)>
+                <!ELEMENT title (#PCDATA)>
+                <!ELEMENT contributor (#PCDATA)>
+                    <!ATTLIST contributor role (com|edt) #REQUIRED>
+                <!ELEMENT identifier (#PCDATA)>
+                    <!ATTLIST identifier type (URL) #REQUIRED>
+                <!ELEMENT rights (#PCDATA)>
+        <!ELEMENT BibleBookCodes (nameEnglish,referenceAbbreviation,referenceNumber,sequenceNumber,expectedChapters?,
+                        SBLAbbreviation?,OSISAbbreviation?,SwordAbbreviation?,CCELNumber?,USFMAbbreviation?,USFMNumber?,
+                        USXNumber?,UnboundCode?,BibleditNumber?,NETBibleAbbreviation?,DrupalBibleAbbreviation?,
+                        BibleWorksAbbreviation?, ByzantineAbbreviation?,
+                        possibleAlternativeAbbreviations?,possibleAlternativeBooks?,
+                        typicalSection)>
+            <!ELEMENT nameEnglish (#PCDATA)>
+            <!ELEMENT referenceAbbreviation (#PCDATA)>
+            <!ELEMENT referenceNumber (#PCDATA)>
+            <!ELEMENT sequenceNumber (#PCDATA)>
+            <!ELEMENT expectedChapters (#PCDATA)>
+            <!ELEMENT SBLAbbreviation (#PCDATA)>
+            <!ELEMENT OSISAbbreviation (#PCDATA)>
+            <!ELEMENT SwordAbbreviation (#PCDATA)>
+            <!ELEMENT CCELNumber (#PCDATA)>
+            <!ELEMENT USFMAbbreviation (#PCDATA)>
+            <!ELEMENT USFMNumber (#PCDATA)>
+            <!ELEMENT USXNumber (#PCDATA)>
+            <!ELEMENT UnboundCode (#PCDATA)>
+            <!ELEMENT BibleditNumber (#PCDATA)>
+            <!ELEMENT NETBibleAbbreviation (#PCDATA)>
+            <!ELEMENT DrupalBibleAbbreviation (#PCDATA)>
+            <!ELEMENT BibleWorksAbbreviation (#PCDATA)>
+            <!ELEMENT ByzantineAbbreviation (#PCDATA)>
+            <!ELEMENT possibleAlternativeAbbreviations (#PCDATA)>
+            <!ELEMENT possibleAlternativeBooks (#PCDATA)>
+            <!ELEMENT typicalSection (#PCDATA)>
+]>
+
+<BibleVersionCodes>
+
+  <header>
+    <work>
+      <version>0.01</version>
+      <date>2022-04-29</date>
+      <title>Bible version codes list</title>
+      <contributor role="com">Robert Hunt</contributor>
+      <identifier type="URL">https://www.blainerobison.com/bible/bible-abbreviations.htm</identifier>
+      <rights>Public Domain</rights>
+    </work>
+  </header>
+
+  <BibleVersionCode>
+    <mainAbbreviation>AKJV</mainAbbreviation>
+    <versionName>Authorised King James Version</versionName>
+    <languageCode>en</languageCode>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>AMP</mainAbbreviation>
+    <versionName>Amplified Bible</versionName>
+    <languageCode>en</languageCode>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>ASV</mainAbbreviation>
+    <versionName>American Standard Version</versionName>
+    <languageCode>en</languageCode>
+    <licence>Public Domain</licence>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>BBE</mainAbbreviation>
+    <versionName>Bible in Basic English</versionName>
+    <languageCode>en</languageCode>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>BHIB</mainAbbreviation>
+    <versionName>Bible Hub Interlinear Bible</versionName>
+    <languageCode>en</languageCode>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>BLB</mainAbbreviation>
+    <versionName>Berean Literal Bible</versionName>
+    <languageCode>en</languageCode>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>BRG</mainAbbreviation>
+    <versionName>Blue Red and Gold Letter Edition Bible</versionName>
+    <languageCode>en</languageCode>
+    <publisherName>BRG Bible Ministries</publisherName>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>CEB</mainAbbreviation>
+    <versionName>Common English Bible</versionName>
+    <languageCode>en</languageCode>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>CEV</mainAbbreviation>
+    <versionName>Contemporary English Version</versionName>
+    <languageCode>en</languageCode>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>CJV</mainAbbreviation>
+    <versionName>Complete Jewish Bible</versionName>
+    <languageCode>en</languageCode>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>CSB</mainAbbreviation>
+    <versionName>Christian Standard Bible</versionName>
+    <languageCode>en</languageCode>
+    <derivedFrom>HCSB</derivedFrom>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>DAR</mainAbbreviation>
+    <versionName>Darby Translation</versionName>
+    <languageCode>en</languageCode>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>DHE</mainAbbreviation>
+    <versionName>The Delitzsch Hebrew Gospels (translation)</versionName>
+    <languageCode>en</languageCode>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>DLNT</mainAbbreviation>
+    <versionName>Disciples Literal New Testament</versionName>
+    <languageCode>en</languageCode>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>DRA</mainAbbreviation>
+    <versionName>Douay-Rheims 1899 American Edition</versionName>
+    <languageCode>en</languageCode>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>ECB</mainAbbreviation>
+    <versionName>exeGeses Companion Bible</versionName>
+    <languageCode>en</languageCode>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>EHV</mainAbbreviation>
+    <versionName>Evangelical Heritage Version: New Testament &amp; Psalms</versionName>
+    <languageCode>en</languageCode>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>EMTV</mainAbbreviation>
+    <versionName>English Majority Text Version: New Testament</versionName>
+    <languageCode>en</languageCode>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>ERV</mainAbbreviation>
+    <versionName>Easy-to-Read Version</versionName>
+    <languageCode>en</languageCode>
+    <publisherName>World Bible Translation Center</publisherName>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>ESV</mainAbbreviation>
+    <versionName>English Standard Version</versionName>
+    <languageCode>en</languageCode>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>EXV</mainAbbreviation>
+    <versionName>The Expanded Bible</versionName>
+    <languageCode>en</languageCode>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>GNC</mainAbbreviation>
+    <versionName>God's New Covenant: A New Testament Translation</versionName>
+    <languageCode>en</languageCode>
+    <publisherName>Heinrich Walter Cassirer</publisherName>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>GoodSp</mainAbbreviation>
+    <versionName>The New Testament: An American Translation</versionName>
+    <languageCode>en</languageCode>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>GNB</mainAbbreviation>
+    <versionName>Good News Bible</versionName>
+    <languageCode>en</languageCode>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>GNT</mainAbbreviation>
+    <versionName>Good News Translation</versionName>
+    <languageCode>en</languageCode>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>GW</mainAbbreviation>
+    <versionName>God's Word</versionName>
+    <languageCode>en</languageCode>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>HCSB</mainAbbreviation>
+    <versionName>Holman Christian Standard Bible</versionName>
+    <languageCode>en</languageCode>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>JPS</mainAbbreviation>
+    <versionName>The Holy Scriptures According to the Masoretic Text</versionName>
+    <languageCode>en</languageCode>
+    <publisherName>Jewish Publication Society of America</publisherName>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>KJV</mainAbbreviation>
+    <versionName>King James Version</versionName>
+    <languageCode>en</languageCode>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>KJV-1611</mainAbbreviation>
+    <versionName>King James Version</versionName>
+    <languageCode>en</languageCode>
+    <derivedFrom>KJV</derivedFrom>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>KJV-1769</mainAbbreviation>
+    <versionName>King James Version</versionName>
+    <languageCode>en</languageCode>
+    <derivedFrom>KJV</derivedFrom>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>LB</mainAbbreviation>
+    <versionName>Living Bible</versionName>
+    <languageCode>en</languageCode>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>LSV</mainAbbreviation>
+    <versionName>Literal Standard Version</versionName>
+    <languageCode>en</languageCode>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>MJLT</mainAbbreviation>
+    <versionName>Messianic Jewish Literal Translation</versionName>
+    <languageCode>en</languageCode>
+    <publisherName>Kevin Geoffrey, Perfect Word Messianic Publishing</publisherName>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>MSG</mainAbbreviation>
+    <versionName>The Message: The Bible in Contemporary Language</versionName>
+    <languageCode>en</languageCode>
+    <publisherName>E. H. Peterson</publisherName>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>MW</mainAbbreviation>
+    <versionName>The Messianic Writings</versionName>
+    <languageCode>en</languageCode>
+    <publisherName>Daniel Gruber</publisherName>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>NASB</mainAbbreviation>
+    <versionName>New American Standard Version</versionName>
+    <languageCode>en</languageCode>
+    <publisherName>Lockman Foundation</publisherName>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>NET</mainAbbreviation>
+    <versionName>The NET Bible / New English Translation</versionName>
+    <languageCode>en</languageCode>
+    <publisherName>Biblical Studies Press</publisherName>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>NIV</mainAbbreviation>
+    <versionName>New International Version</versionName>
+    <languageCode>en</languageCode>
+    <publisherName>Biblica, Inc.</publisherName>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>NLT</mainAbbreviation>
+    <versionName>New Living Translation</versionName>
+    <languageCode>en</languageCode>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>OEB</mainAbbreviation>
+    <versionName>Open English Bible</versionName>
+    <languageCode>en</languageCode>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>OET</mainAbbreviation>
+    <versionName>Open English Translation</versionName>
+    <languageCode>en</languageCode>
+    <publisherName>Freely-Given.org</publisherName>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>OJB</mainAbbreviation>
+    <versionName>Orthodox Jewish Bible</versionName>
+    <languageCode>en</languageCode>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>REB</mainAbbreviation>
+    <versionName>Revised English Bible</versionName>
+    <languageCode>en</languageCode>
+    <publisherName>Oxford University Press and Cambridge University</publisherName>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>REV</mainAbbreviation>
+    <versionName>Revised English Version</versionName>
+    <languageCode>en</languageCode>
+    <publisherName>Spirit and Truth Fellowship International</publisherName>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>RGT</mainAbbreviation>
+    <versionName>Revised Geneva Translation</versionName>
+    <languageCode>en</languageCode>
+    <publisherName>Five Talents Audio</publisherName>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>RSV</mainAbbreviation>
+    <versionName>Revised Standard Version</versionName>
+    <languageCode>en</languageCode>
+    <publisherName>Division of Christian Education of the National Council of the Churches of Christ in the United States of America</publisherName>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>RSV-CE</mainAbbreviation>
+    <versionName>Revised Standard Version, Catholic Edition</versionName>
+    <languageCode>en</languageCode>
+    <publisherName>Division of Christian Education of the National Council of the Churches of Christ in the United States of America</publisherName>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>RVA</mainAbbreviation>
+    <versionName>Reina-Valera Antigua</versionName>
+    <languageCode>sp</languageCode>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>SLT</mainAbbreviation>
+    <versionName>Smith's Literal Translation of the Bible</versionName>
+    <languageCode>en</languageCode>
+    <publisherName>Julia E. Smith</publisherName>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>TEV</mainAbbreviation>
+    <versionName>Today's English Version</versionName>
+    <languageCode>en</languageCode>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>TLB</mainAbbreviation>
+    <versionName>The Living Bible</versionName>
+    <languageCode>en</languageCode>
+    <publisherName>Kenneth Taylor</publisherName>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>TNIV</mainAbbreviation>
+    <versionName>Today's New International Version</versionName>
+    <languageCode>en</languageCode>
+    <publisherName>Biblica, Inc.</publisherName>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>TPT</mainAbbreviation>
+    <versionName>The Passion Translation</versionName>
+    <languageCode>en</languageCode>
+    <publisherName>BroadStreet Publishing Group, LLC</publisherName>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>UGNT</mainAbbreviation>
+    <versionName>unfoldingWord® Greek New Testament</versionName>
+    <languageCode>x-grk-koine</languageCode>
+    <publisherName>unfoldingWord®</publisherName>
+    <licence>Creative Commons Attribution-ShareAlike 4.0 International License</licence>
+   <webLink>https://git.door43.org/unfoldingWord/en_ugnt</webLink>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>UHB</mainAbbreviation>
+    <versionName>unfoldingWord® Hebrew Bible</versionName>
+    <languageCode>he</languageCode>
+    <publisherName>unfoldingWord®</publisherName>
+    <licence>Creative Commons Attribution-ShareAlike 4.0 International License</licence>
+    <webLink>https://git.door43.org/unfoldingWord/en_uhb</webLink>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>ULT</mainAbbreviation>
+    <versionName>unfoldingWord® Literal Text</versionName>
+    <languageCode>en</languageCode>
+    <publisherName>unfoldingWord®</publisherName>
+    <licence>Creative Commons Attribution-ShareAlike 4.0 International License</licence>
+    <webLink>https://git.door43.org/unfoldingWord/en_ult</webLink>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>UST</mainAbbreviation>
+    <versionName>unfoldingWord® Simplified Text</versionName>
+    <languageCode>en</languageCode>
+    <publisherName>unfoldingWord®</publisherName>
+    <licence>Creative Commons Attribution-ShareAlike 4.0 International License</licence>
+    <webLink>https://git.door43.org/unfoldingWord/en_ust</webLink>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>Voice</mainAbbreviation>
+    <versionName>The Voice Bible</versionName>
+    <languageCode>en</languageCode>
+    <publisherName>Thomas Nelson, Inc.; Ecclesia Bible Society</publisherName>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>VUL</mainAbbreviation>
+    <versionName>Biblia Sacra Vulgata</versionName>
+    <languageCode>la</languageCode>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>WE</mainAbbreviation>
+    <versionName>Worldwide English New Testament</versionName>
+    <languageCode>en</languageCode>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>WEB</mainAbbreviation>
+    <versionName>World English Bible</versionName>
+    <languageCode>en</languageCode>
+    <publisherName>eBible.org</publisherName>
+    <licence>Public Domain</licence>
+    <webLink>https://worldenglish.bible/</webLink>
+    <publisherLink>https://ebible.org/</publisherLink>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>WMB</mainAbbreviation>
+    <versionName>World Messianic Bible</versionName>
+    <languageCode>en</languageCode>
+    <publisherName>eBible.org</publisherName>
+    <licence>Public Domain</licence>
+    <webLink>https://worldenglish.bible/</webLink>
+    <publisherLink>https://ebible.org/</publisherLink>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>WNT</mainAbbreviation>
+    <versionName>Weymouth New Testament</versionName>
+    <languageCode>en</languageCode>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>YLT</mainAbbreviation>
+    <versionName>Youngs Literal Translation</versionName>
+    <languageCode>en</languageCode>
+    <licence>Public Domain</licence>
+  </BibleVersionCode>
+
+</BibleVersionCodes>
