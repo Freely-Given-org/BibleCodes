@@ -1,4 +1,4 @@
-# BibleCodes
+# BibleVersionCodes
 
 A registry of short Bible version codes, e.g., KJV for King James Version. However, like most Bibles, there's different editions so KJV-1611 is quite different from KJV-1769.
 
