@@ -481,12 +481,20 @@ See the supplied BibleBooksCodes.ReadMe.txt for more details.
   </BibleVersionCode>
 
   <BibleVersionCode>
+    <mainAbbreviation>UASV</mainAbbreviation>
+    <versionName>Updated American Standard Version</versionName>
+    <languageCode>en</languageCode>
+    <publisherName>Christian Publishing House</publisherName>
+    <webLink>https://uasvbible.org</webLink>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
     <mainAbbreviation>UGNT</mainAbbreviation>
     <versionName>unfoldingWord® Greek New Testament</versionName>
     <languageCode>x-grk-koine</languageCode>
     <publisherName>unfoldingWord®</publisherName>
     <licence>Creative Commons Attribution-ShareAlike 4.0 International License</licence>
-   <webLink>https://git.door43.org/unfoldingWord/en_ugnt</webLink>
+    <webLink>https://git.door43.org/unfoldingWord/en_ugnt</webLink>
   </BibleVersionCode>
 
   <BibleVersionCode>
