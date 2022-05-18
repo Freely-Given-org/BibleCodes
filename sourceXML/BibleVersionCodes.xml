@@ -145,10 +145,24 @@ See the supplied BibleBooksCodes.ReadMe.txt for more details.
   </BibleVersionCode>
 
   <BibleVersionCode>
+    <mainAbbreviation>Anderson</mainAbbreviation>
+    <versionName>The New Testament Translated from the Original Greek</versionName>
+    <languageCode>en</languageCode>
+    <publisherName>H.T. Anderson</publisherName>
+    <licence>Public Domain</licence>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
     <mainAbbreviation>ASV</mainAbbreviation>
     <versionName>American Standard Version</versionName>
     <languageCode>en</languageCode>
     <licence>Public Domain</licence>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>AV</mainAbbreviation>
+    <versionName>Authorised Version</versionName>
+    <languageCode>en</languageCode>
   </BibleVersionCode>
 
   <BibleVersionCode>
@@ -161,6 +175,13 @@ See the supplied BibleBooksCodes.ReadMe.txt for more details.
     <mainAbbreviation>BHIB</mainAbbreviation>
     <versionName>Bible Hub Interlinear Bible</versionName>
     <languageCode>en</languageCode>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>Bishop</mainAbbreviation>
+    <versionName>The Bishop's Bible</versionName>
+    <languageCode>en</languageCode>
+    <licence>Public Domain</licence>
   </BibleVersionCode>
 
   <BibleVersionCode>
@@ -195,6 +216,14 @@ See the supplied BibleBooksCodes.ReadMe.txt for more details.
   </BibleVersionCode>
 
   <BibleVersionCode>
+    <mainAbbreviation>Coverdale</mainAbbreviation>
+    <versionName>Coverdale Bible</versionName>
+    <languageCode>en</languageCode>
+    <publisherName>Miles Coverdale</publisherName>
+    <licence>Public Domain</licence>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
     <mainAbbreviation>CSB</mainAbbreviation>
     <versionName>Christian Standard Bible</versionName>
     <languageCode>en</languageCode>
@@ -202,9 +231,11 @@ See the supplied BibleBooksCodes.ReadMe.txt for more details.
   </BibleVersionCode>
 
   <BibleVersionCode>
-    <mainAbbreviation>DAR</mainAbbreviation>
+    <mainAbbreviation>DBY</mainAbbreviation>
     <versionName>Darby Translation</versionName>
     <languageCode>en</languageCode>
+    <publisherName>J.N. Darby</publisherName>
+    <licence>Public Domain</licence>
   </BibleVersionCode>
 
   <BibleVersionCode>
@@ -223,6 +254,13 @@ See the supplied BibleBooksCodes.ReadMe.txt for more details.
     <mainAbbreviation>DRA</mainAbbreviation>
     <versionName>Douay-Rheims 1899 American Edition</versionName>
     <languageCode>en</languageCode>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>DSS</mainAbbreviation>
+    <versionName>The Dead Sea Scrolls: A New Translation</versionName>
+    <languageCode>en</languageCode>
+    <publisherName>HarperOne</publisherName>
   </BibleVersionCode>
 
   <BibleVersionCode>
@@ -336,6 +374,12 @@ See the supplied BibleBooksCodes.ReadMe.txt for more details.
     <mainAbbreviation>LSV</mainAbbreviation>
     <versionName>Literal Standard Version</versionName>
     <languageCode>en</languageCode>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>LXX</mainAbbreviation>
+    <versionName>Septuagint Translation of the Hebrew Bible</versionName>
+    <languageCode>grk</languageCode>
   </BibleVersionCode>
 
   <BibleVersionCode>
