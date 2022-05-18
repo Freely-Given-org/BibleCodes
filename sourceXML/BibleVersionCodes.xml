@@ -4,7 +4,7 @@
 <!--
 This file gives a table of Bible versions abbreviations including
 these four compulsory fields:
-    An English book name (as a comment only)
+    The main abbreviation (as brief as possible, e.g., KJV) and unique (in Latin script, in alphabetic order)
     A three-character reference code (upper case, no spaces, begins with a letter)
         This reference code should reflect book contents (not book names) and is used to link to other tables.
         These reference codes are guaranteed to be stable after V1.00
@@ -24,45 +24,10 @@ and then these optional fields (optional because not all systems handle the less
     The SBL abbreviation (can include spaces)
     The OSIS abbreviation (no spaces but may begin with a digit)
     The Sword abbreviation
-    The 1-2 digit CCEL ID number
-    The three-character USFM abbreviation (no spaces but may begin with a digit)
-        Also used for Paratext Bible editor and Digital Bible Library (DBL) bundles
-    The two-digit USFM ID number
-        UBS/SIL Paratext uses both the number and the abbreviation above (and USFM format)
-    The three-digit USX ID number
-        UBS/SIL Paratext can export to USX files
-    The 1-2 digit Bibledit ID number
-    The three-character NET Bible abbreviation
-    The three-character DrupalBible abbreviation
-    The 2-4 character Bible abbreviation used for the Robinson-Pierpont Byzantine Greek text
-    Alternative abbreviations (upper case, separated by commas, optional)
-        These abbreviations might typically be used in VPL (verse per line) Bibles
-    Possible alternative book codes (separated by commas)
-        This is not precise but roughly shows which book this book might be confused with.
-        It is used for automatic mapping of book codes (also using the expected number of chapters)
-    The name of a typical section containing this book (in the set OT, OT+, NT, NT+, DC, PS, FRT, BAK)
-Most of the above fields should individually be unique, but there are some many-to-one mappings.
-    e.g., Paratext uses the same code for Ezra as for Ezra-Nehemiah. (We make available separate codes.)
 
 The information in this table should be language agnostic although English is used as a meta-language.
 It should also be independent of any theological judgements but mostly based on historical publications.
 The main aim is to supply an inventory of book codes which are recognised by the BibleOrgSsy Bible Organisational System.
-
-Deutero-canonical/Apocryphal and less common books are included, even pseudegrapha.
-"Combined" books are included.
-This table does not infer any information about the quality or theological usefulness of any particular book.
-This table does not infer any information about the presence or the order of the books within any particular publication.
-This table is not authoritative about the number of chapters (or verses) in any given book in any particular publication.
-There should be exactly one entry for each possible Bible book which is printed separately in some publications
-    and one entry for each possible combination of those Bible books.
-For example:
-    If Ezra and Nehemiah are sometimes published as individual books, and sometimes combined, there should be three entries in this database.
-    If Hebrew Esther and Greek Esther are sometimes published as individual books, and sometimes combined, there should be 3 entries in this database.
-        However, if Greek Esther was never published singly, but only in combination with Hebrew Esther, there would only be 2 entries (Hebrew Esther and Combined Esther).
-    This is because mappings between/across Bible books in different publications will be dependent on this file.
-        (If it's JUST that chapters and verses are divided up differently WITHIN a book, that's handled elsewhere.)
-    If a book is a translation of another book, that is not usually a good enough reason to include multiple entries here
-        (unless say, both the original and a translation were published in the same "Bible").
 
 This file can never adequately represent all possible historical Bible books codes (and their mappings),
     especially since it attempts to avoid including historic codes which were not consistent or logical.
@@ -73,7 +38,7 @@ Note that the data is supplied as XML elements (not attributes).
 
 Although an internal DTD is included, a Relax NG (RNC) schema is also supplied for better validation.
 
-See the supplied BibleBooksCodes.ReadMe.txt for more details.
+See the supplied BibleVersionCodes.ReadMe.md for more details.
 -->
 
 <!DOCTYPE BibleBooksCodes [
@@ -371,6 +336,14 @@ See the supplied BibleBooksCodes.ReadMe.txt for more details.
   </BibleVersionCode>
 
   <BibleVersionCode>
+    <mainAbbreviation>LSB</mainAbbreviation>
+    <versionName>Legacy Standard Bible</versionName>
+    <languageCode>en</languageCode>
+    <publisher>Lockman Foundation</publisher>
+    <webLink>https://lsbible.org</webLink>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
     <mainAbbreviation>LSV</mainAbbreviation>
     <versionName>Literal Standard Version</versionName>
     <languageCode>en</languageCode>
@@ -525,12 +498,20 @@ See the supplied BibleBooksCodes.ReadMe.txt for more details.
   </BibleVersionCode>
 
   <BibleVersionCode>
+    <mainAbbreviation>UASV</mainAbbreviation>
+    <versionName>Updated American Standard Version</versionName>
+    <languageCode>en</languageCode>
+    <publisherName>Christian Publishing House</publisherName>
+    <webLink>https://uasvbible.org</webLink>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
     <mainAbbreviation>UGNT</mainAbbreviation>
     <versionName>unfoldingWord® Greek New Testament</versionName>
     <languageCode>x-grk-koine</languageCode>
     <publisherName>unfoldingWord®</publisherName>
     <licence>Creative Commons Attribution-ShareAlike 4.0 International License</licence>
-   <webLink>https://git.door43.org/unfoldingWord/en_ugnt</webLink>
+    <webLink>https://git.door43.org/unfoldingWord/en_ugnt</webLink>
   </BibleVersionCode>
 
   <BibleVersionCode>
