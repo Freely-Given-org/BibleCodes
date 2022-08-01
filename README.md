@@ -1,6 +1,6 @@
 # BibleVersionCodes
 
-A registry of short Bible version codes, e.g., KJV for King James Version. However, like most Bibles, there's different editions so KJV-1611 is quite different from KJV-1769.
+A registry of short Bible version codes, e.g., KJV for King James Version. However, like most Bibles, there’s different editions so KJV-1611 is quite different from KJV-1769.
 
 ## History
 
@@ -19,8 +19,8 @@ This data was originally hosted [here](https://Freely-Given.org/BibleReference/B
 
 - To provide a short (2-8 character) abbreviation for a Bible version or commentary
 - To include both original language Bible texts and translations
-- Version code must not contain whitespace (so it's a single token)
-- May contain uppercase and lowercase letters (including any Unicode letters), but the UPPERCASEd version must be unique, i.e., can have MyRV but can't have both MyRV and MYRV
+- Version code must not contain whitespace (so it’s a single token)
+- May contain uppercase and lowercase letters (including any Unicode letters), but the UPPERCASEd version must be unique, i.e., can have MyRV but can’t have both MyRV and MYRV
 - To avoid clashes when a publisher is looking for new abbreviation (remembering that Bibles are published in many languages), some versions will need to make adjustments -- first in, first served, e.g., if SRV is "Seminary Revised Version" then "Swahili Revised Version" might need to be SwRV
 - To be able to have a 4-digit publication year appended as necessary, e.g., KJV-1611
 - To be able to have an edition string appended as necessary KJV!MBS_1997_Printing or KJV-1769!MBS_1997_Printing
