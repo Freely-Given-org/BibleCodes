@@ -130,6 +130,42 @@ See the supplied BibleVersionCodes.ReadMe.md for more details.
   </BibleVersionCode>
 
   <BibleVersionCode>
+    <mainAbbreviation>BB</mainAbbreviation>
+    <versionName>The Bishops’ Bible</versionName>
+    <languageCode>en</languageCode>
+    <licence>Public Domain</licence>
+    <alternativeAbbreviations>BB</alternativeAbbreviations>
+    <recommendedAlternative>BB</recommendedAlternative>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>BB-1568</mainAbbreviation>
+    <versionName>The Bishops’ Bible</versionName>
+    <languageCode>en</languageCode>
+    <licence>Public Domain</licence>
+    <alternativeAbbreviations>BB</alternativeAbbreviations>
+    <recommendedAlternative>BB</recommendedAlternative>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>BB-1572</mainAbbreviation>
+    <versionName>The Bishops’ Bible</versionName>
+    <languageCode>en</languageCode>
+    <licence>Public Domain</licence>
+    <derivedFrom>BB-1568</derivedFrom>
+    <alternativeAbbreviations>BB</alternativeAbbreviations>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
+    <mainAbbreviation>BB-1602</mainAbbreviation>
+    <versionName>The Bishops’ Bible</versionName>
+    <languageCode>en</languageCode>
+    <licence>Public Domain</licence>
+    <derivedFrom>BB-1572</derivedFrom>
+    <alternativeAbbreviations>BB</alternativeAbbreviations>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
     <mainAbbreviation>BBE</mainAbbreviation>
     <versionName>Bible in Basic English</versionName>
     <languageCode>en</languageCode>
@@ -143,9 +179,11 @@ See the supplied BibleVersionCodes.ReadMe.md for more details.
 
   <BibleVersionCode>
     <mainAbbreviation>Bishop</mainAbbreviation>
-    <versionName>The Bishop's Bible</versionName>
+    <versionName>The Bishops’ Bible</versionName>
     <languageCode>en</languageCode>
     <licence>Public Domain</licence>
+    <alternativeAbbreviations>BB</alternativeAbbreviations>
+    <recommendedAlternative>BB</recommendedAlternative>
   </BibleVersionCode>
 
   <BibleVersionCode>
@@ -265,8 +303,14 @@ See the supplied BibleVersionCodes.ReadMe.md for more details.
   </BibleVersionCode>
 
   <BibleVersionCode>
+    <mainAbbreviation>GB</mainAbbreviation>
+    <versionName>Geneva Bible</versionName>
+    <languageCode>en</languageCode>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
     <mainAbbreviation>GNC</mainAbbreviation>
-    <versionName>God's New Covenant: A New Testament Translation</versionName>
+    <versionName>God’s New Covenant: A New Testament Translation</versionName>
     <languageCode>en</languageCode>
     <publisherName>Heinrich Walter Cassirer</publisherName>
   </BibleVersionCode>
@@ -291,7 +335,7 @@ See the supplied BibleVersionCodes.ReadMe.md for more details.
 
   <BibleVersionCode>
     <mainAbbreviation>GW</mainAbbreviation>
-    <versionName>God's Word</versionName>
+    <versionName>God’s Word</versionName>
     <languageCode>en</languageCode>
   </BibleVersionCode>
 
@@ -309,9 +353,20 @@ See the supplied BibleVersionCodes.ReadMe.md for more details.
   </BibleVersionCode>
 
   <BibleVersionCode>
+    <mainAbbreviation>KJB</mainAbbreviation>
+    <versionName>King James Bible</versionName>
+    <alternativeAbbreviations>KJV</alternativeAbbreviations>
+    <languageCode>en</languageCode>
+    <derivedFrom>BB-1602</derivedFrom>
+  </BibleVersionCode>
+
+  <BibleVersionCode>
     <mainAbbreviation>KJV</mainAbbreviation>
     <versionName>King James Version</versionName>
+    <alternativeAbbreviations>KJV</alternativeAbbreviations>
+    <recommendedAlternative>KJB</recommendedAlternative>
     <languageCode>en</languageCode>
+    <derivedFrom>BB-1602</derivedFrom>
   </BibleVersionCode>
 
   <BibleVersionCode>
@@ -440,6 +495,7 @@ See the supplied BibleVersionCodes.ReadMe.md for more details.
     <mainAbbreviation>RGT</mainAbbreviation>
     <versionName>Revised Geneva Translation</versionName>
     <languageCode>en</languageCode>
+    <derivedFrom>GB</derivedFrom>
     <publisherName>Five Talents Audio</publisherName>
   </BibleVersionCode>
 
@@ -465,14 +521,14 @@ See the supplied BibleVersionCodes.ReadMe.md for more details.
 
   <BibleVersionCode>
     <mainAbbreviation>SLT</mainAbbreviation>
-    <versionName>Smith's Literal Translation of the Bible</versionName>
+    <versionName>Smith’s Literal Translation of the Bible</versionName>
     <languageCode>en</languageCode>
     <publisherName>Julia E. Smith</publisherName>
   </BibleVersionCode>
 
   <BibleVersionCode>
     <mainAbbreviation>TEV</mainAbbreviation>
-    <versionName>Today's English Version</versionName>
+    <versionName>Today’s English Version</versionName>
     <languageCode>en</languageCode>
   </BibleVersionCode>
 
@@ -485,7 +541,7 @@ See the supplied BibleVersionCodes.ReadMe.md for more details.
 
   <BibleVersionCode>
     <mainAbbreviation>TNIV</mainAbbreviation>
-    <versionName>Today's New International Version</versionName>
+    <versionName>Today’s New International Version</versionName>
     <languageCode>en</languageCode>
     <publisherName>Biblica, Inc.</publisherName>
   </BibleVersionCode>
