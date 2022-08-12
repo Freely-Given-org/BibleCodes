@@ -1,6 +1,8 @@
 # BibleVersionCodes
 
-A registry of short Bible version codes, e.g., KJV for King James Version. However, like most Bibles, there’s different editions so KJV-1611 is quite different from KJV-1769.
+This repo will be archived because we seem to be ending up duplicating too much of what's planned for https://github.com/Freely-Given-org/BiblePublicationDetails.
+
+A registry of short Bible version codes, e.g., KJB for King James Bible. However, like most Bibles, there’s different editions so KJB-1611 is quite different from KJB-1769.
 
 ## History
 
@@ -22,6 +24,6 @@ This data was originally hosted [here](https://Freely-Given.org/BibleReference/B
 - Version code must not contain whitespace (so it’s a single token)
 - May contain uppercase and lowercase letters (including any Unicode letters), but the UPPERCASEd version must be unique, i.e., can have MyRV but can’t have both MyRV and MYRV
 - To avoid clashes when a publisher is looking for new abbreviation (remembering that Bibles are published in many languages), some versions will need to make adjustments -- first in, first served, e.g., if SRV is "Seminary Revised Version" then "Swahili Revised Version" might need to be SwRV
-- To be able to have a 4-digit publication year appended as necessary, e.g., KJV-1611
-- To be able to have an edition string appended as necessary KJV!MBS_1997_Printing or KJV-1769!MBS_1997_Printing
+- To be able to have a 4-digit publication year appended as necessary, e.g., KJB-1611
+- To be able to have an edition string appended as necessary KJB!MBS_1997_Printing or KJB-1769!MBS_1997_Printing
 - Dataset contains minimal information (like fullname, language, licence, and a link) in order to light and quick to load -- further details and relationships can be in https://github.com/Freely-Given-org/BibleOrgSys/blob/main/BibleOrgSys/DataFiles/BibleOrganisationalSystems.xml
